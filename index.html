@@ -1,203 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PackMate Email Verification Success">
-    <title>Account Activated | PackMate</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>PackMate</title>
+    <!-- Keeping Tailwind CDN for simplicity in this demo, but typically recommended to install locally via PostCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            animation: gradientShift 10s ease infinite;
-            background-size: 200% 200%;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            padding: 48px 40px;
-            border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            max-width: 440px;
-            width: 100%;
-            animation: slideUp 0.6s ease-out;
-        }
-        
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .icon-circle {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            animation: scaleIn 0.5s ease-out 0.2s both;
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
-        }
-        
-        @keyframes scaleIn {
-            from {
-                transform: scale(0);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-        
-        .icon-check {
-            color: white;
-            width: 44px;
-            height: 44px;
-            stroke-width: 3;
-        }
-        
-        h1 {
-            color: #111827;
-            font-size: 28px;
-            font-weight: 800;
-            margin: 0 0 12px;
-            animation: fadeIn 0.6s ease-out 0.3s both;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .message {
-            color: #10b981;
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 1.5;
-            margin: 0 0 16px;
-            animation: fadeIn 0.6s ease-out 0.4s both;
-        }
-        
-        .description {
-            color: #6b7280;
-            font-size: 15px;
-            line-height: 1.6;
-            margin: 0 0 32px;
-            animation: fadeIn 0.6s ease-out 0.5s both;
-        }
-        
-        .app-info {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 16px 20px;
-            border-radius: 16px;
-            margin-bottom: 24px;
-            animation: fadeIn 0.6s ease-out 0.6s both;
-        }
-        
-        .app-name {
-            font-size: 20px;
-            font-weight: 800;
-            margin-bottom: 4px;
-            letter-spacing: -0.5px;
-        }
-        
-        .app-tagline {
-            font-size: 13px;
-            opacity: 0.9;
-            font-weight: 500;
-        }
-        
-        .footer {
-            font-size: 12px;
-            color: #9ca3af;
-            margin-top: 24px;
-            animation: fadeIn 0.6s ease-out 0.7s both;
-        }
-        
-        .close-hint {
-            display: inline-block;
-            background: #f3f4f6;
-            color: #6b7280;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 500;
-            margin-top: 16px;
-            animation: fadeIn 0.6s ease-out 0.8s both;
-        }
-        
-        @media (max-width: 480px) {
-            .card {
-                padding: 40px 24px;
-            }
-            
-            h1 {
-                font-size: 24px;
-            }
-            
-            .message {
-                font-size: 16px;
-            }
-        }
+      body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(to bottom, #60a5fa, #e0f2fe); /* Sky blue gradient */
+        min-height: 100vh;
+        /* Ensure vertical scrolling is enabled */
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        /* Padding for status bar on iOS devices with notches */
+        padding-top: env(safe-area-inset-top);
+      }
+      /* Hide scrollbar for clean UI */
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      /* Fix for html2canvas export alignment with Tailwind */
+      img {
+        display: inline-block;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+      /* Utility to hide scrollbar but allow scroll */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      /* Capacitor/Mobile Specific adjustments */
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
     </style>
+<link rel="stylesheet" href="/index.css">
+  <script type="module" crossorigin src="/assets/index-DyCxtNQv.js"></script>
 </head>
-<body>
-    <div class="card">
-        <div class="icon-circle">
-            <svg class="icon-check" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
-            </svg>
-        </div>
-        
-        <h1>Account Activated!</h1>
-        
-        <p class="message">✓ Email Successfully Verified</p>
-        
-        <p class="description">
-            Your account is now active and ready to use. You can close this window and return to the app to start planning your adventures.
-        </p>
-        
-        <div class="app-info">
-            <div class="app-name">🏔️ PackMate</div>
-            <div class="app-tagline">Plan Together. Pack Lighter.</div>
-        </div>
-        
-        <div class="close-hint">
-            ← You can safely close this window now
-        </div>
-        
-        <div class="footer">
-            © 2024 PackMate • All rights reserved
-        </div>
-    </div>
-</body>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
